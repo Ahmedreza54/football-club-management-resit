@@ -76,7 +76,7 @@ $loggedIn = isset($_SESSION['user']);
             <span class="landing-badge">Tournament management</span>
             <h1 class="display-5 mb-3">Football Management System</h1>
             <p class="lead opacity-90 mb-4 mb-lg-5">
-                Manage teams, players, fixtures, match results, live scores, and Premier League data in one modern football management platform.
+               Manage teams, players, fixtures, match results, live scores, Premier League data, and player statistics in one modern football platform.
             </p>
             <div class="d-flex flex-wrap gap-2">
                 <?php if (!$loggedIn): ?>
