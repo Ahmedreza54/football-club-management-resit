@@ -31,6 +31,37 @@ declare(strict_types=1);
                 <div id="leaderboard" class="mt-3 text-muted">Loading...</div>
             </div>
         </div>
+        <div class="col-lg-4">
+    <div class="border rounded p-3 h-100 bg-white">
+        <strong>Live Premier League</strong>
+        <div class="text-muted small mt-1">Top 5 teams (Football API)</div>
+
+        <table class="table table-sm mt-3 mb-0">
+            <tbody>
+            <?php foreach ($standings as $team): ?>
+                <tr>
+                    <td><?= $team['position'] ?></td>
+                    <td>
+                        <img src="<?= htmlspecialchars($team['team']['crest']) ?>"
+                             width="20"
+                             height="20"
+                             style="margin-right:8px;">
+                        <?= htmlspecialchars($team['team']['name']) ?>
+                    </td>
+                    <td class="text-end">
+                        <?= $team['points'] ?> pts
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+
+        <div class="mt-3">
+            <a href="index.php?r=api-standings" class="btn btn-sm btn-primary">
+                View Full Table
+            </a>
+        </div>
+
     </div>
 </div>
 

@@ -46,6 +46,7 @@ $loggedIn = isset($_SESSION['user']);
         border-radius: 0.75rem;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
         height: 100%;
+        cursor: pointer;
     }
     .landing-feature-card:hover {
         transform: translateY(-4px);
@@ -75,7 +76,7 @@ $loggedIn = isset($_SESSION['user']);
             <span class="landing-badge">Tournament management</span>
             <h1 class="display-5 mb-3">Football Management System</h1>
             <p class="lead opacity-90 mb-4 mb-lg-5">
-                Run teams, fixtures, live scores, and role-based dashboards in one place—built for demos, coursework, and real club use.
+                Manage teams, players, fixtures, match results, live scores, and Premier League data in one modern football management platform.
             </p>
             <div class="d-flex flex-wrap gap-2">
                 <?php if (!$loggedIn): ?>
@@ -102,6 +103,7 @@ $loggedIn = isset($_SESSION['user']);
 
 <div class="row g-4 mb-4">
     <div class="col-md-6 col-xl-3">
+        <a href="./index.php?r=teams" class="text-decoration-none text-dark">
         <div class="card landing-feature-card shadow-sm">
             <div class="card-body p-4">
                 <div class="landing-icon bg-primary bg-opacity-10 text-primary">👥</div>
@@ -109,8 +111,10 @@ $loggedIn = isset($_SESSION['user']);
                 <p class="text-muted small mb-0">Create teams, assign coaches, add players, and set captains with full CRUD.</p>
             </div>
         </div>
+    </a>
     </div>
     <div class="col-md-6 col-xl-3">
+        <a href="./index.php?r=matches" class="text-decoration-none text-dark">
         <div class="card landing-feature-card shadow-sm">
             <div class="card-body p-4">
                 <div class="landing-icon bg-success bg-opacity-10 text-success">📅</div>
@@ -118,8 +122,10 @@ $loggedIn = isset($_SESSION['user']);
                 <p class="text-muted small mb-0">Fixtures with date and time, home vs away teams, and upcoming match views.</p>
             </div>
         </div>
+    </a>
     </div>
     <div class="col-md-6 col-xl-3">
+        <a href="./index.php?r=match-history" class="text-decoration-none text-dark">
         <div class="card landing-feature-card shadow-sm">
             <div class="card-body p-4">
                 <div class="landing-icon bg-warning bg-opacity-10 text-warning">🏆</div>
@@ -127,14 +133,26 @@ $loggedIn = isset($_SESSION['user']);
                 <p class="text-muted small mb-0">Enter results, automatic winner logic, and match history by role.</p>
             </div>
         </div>
+     </a>
     </div>
     <div class="col-md-6 col-xl-3">
+        <a href="./index.php?r=dashboard" class="text-decoration-none text-dark">
         <div class="card landing-feature-card shadow-sm">
             <div class="card-body p-4">
                 <div class="landing-icon bg-info bg-opacity-10 text-info">📊</div>
                 <h2 class="h5 fw-semibold">Stats dashboard</h2>
                 <p class="text-muted small mb-0">AJAX-powered player stats, team ranking, and leaderboard—no full page reload.</p>
             </div>
+        </div>
+     </a>
+    </div>
+</div>
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+        <h5>Upcoming Premier League Matches</h5>
+
+        <div id="upcoming-matches">
+            Loading fixtures...
         </div>
     </div>
 </div>
@@ -154,3 +172,41 @@ $loggedIn = isset($_SESSION['user']);
         </div>
     </div>
 </div>
+<script>
+$(function () {
+
+    $.getJSON("./index.php?r=api-matches&ajax=1", function(matches){
+
+        let html = '<table class="table table-sm">';
+        html += '<tbody>';
+
+        matches.slice(0,5).forEach(function(match){
+
+            let date = new Date(match.utcDate);
+
+            html += `
+                <tr>
+                    <td>${match.homeTeam.name}</td>
+                    <td><strong>vs</strong></td>
+                    <td>${match.awayTeam.name}</td>
+                    <td class="text-end">${date.toLocaleDateString()}</td>
+                </tr>
+            `;
+
+        });
+
+        html += '</tbody></table>';
+
+        html += `
+            <a href="./index.php?r=api-matches"
+               class="btn btn-primary btn-sm">
+               View All Fixtures
+            </a>
+        `;
+
+        $("#upcoming-matches").html(html);
+
+    });
+
+});
+</script>

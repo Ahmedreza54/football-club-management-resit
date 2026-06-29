@@ -27,6 +27,8 @@ require_once $BASE_PATH . '/app/models/MatchModel.php';
 require_once $BASE_PATH . '/app/controllers/ScoresController.php';
 require_once $BASE_PATH . '/app/models/ScoreModel.php';
 require_once $BASE_PATH . '/app/controllers/UploadsController.php';
+require_once $BASE_PATH . '/app/controllers/ApiController.php';
+require_once $BASE_PATH . '/app/services/FootballApi.php';
 
 $route = $_GET['r'] ?? 'home'; // e.g. ?r=teams, ?r=matches, ?r=dashboard
 
@@ -49,8 +51,39 @@ $routes = [
         View::render('home', ['title' => 'Football Management System']);
     },
     'dashboard' => function () {
+    require_login();
+
+    $api = new FootballApi();
+
+    $standings = array_slice(
+        $api->getStandings()['standings'][0]['table'],
+        0,
+        5
+    );
+
+    $scorers = array_slice(
+        $api->getTopScorers(),
+        0,
+        5
+    );
+
+    View::render('dashboard', [
+        'title' => 'Dashboard',
+        'standings' => $standings,
+        'scorers' => $scorers
+    ]);
+},
+    'api-standings' => function () {
         require_login();
-        View::render('dashboard', ['title' => 'Dashboard (setup in progress)']);
+       (new ApiController())->standings();
+    },
+    'api-matches' => function () {
+    require_login();
+    (new ApiController())->upcomingMatches();
+    },
+    'api-topscorers' => function () {
+    require_login();
+    (new ApiController())->topScorers();
     },
     'logout' => function () {
         Auth::logout();
