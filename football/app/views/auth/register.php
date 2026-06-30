@@ -39,6 +39,7 @@ $action = './index.php?r=register-' . $role;
                         type="text"
                         name="name"
                         placeholder="Enter your full name"
+                        maxlength="100"
                         required>
                 </div>
                 <div class="mb-3">
@@ -47,6 +48,7 @@ $action = './index.php?r=register-' . $role;
                         class="form-control"
                         type="email"
                         name="email"
+                        autocomplete="email"
                         placeholder="Enter your email address"
                         required>
                 </div>
@@ -56,6 +58,7 @@ $action = './index.php?r=register-' . $role;
                         class="form-control"
                         type="password"
                         name="password"
+                        autocomplete="new-password"
                         placeholder="Create a secure password"
                         required>
                 </div>
