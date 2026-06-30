@@ -108,7 +108,7 @@ $loggedIn = isset($_SESSION['user']);
             <div class="card-body p-4">
                 <div class="landing-icon bg-primary bg-opacity-10 text-primary">👥</div>
                 <h2 class="h5 fw-semibold">Teams &amp; rosters</h2>
-                <p class="text-muted small mb-0">Create teams, assign coaches, add players, and set captains with full CRUD.</p>
+                <p class="text-muted small mb-0">Create football clubs, assign managers, register players and manage squads easily.</p>
             </div>
         </div>
     </a>
@@ -119,7 +119,7 @@ $loggedIn = isset($_SESSION['user']);
             <div class="card-body p-4">
                 <div class="landing-icon bg-success bg-opacity-10 text-success">📅</div>
                 <h2 class="h5 fw-semibold">Match scheduling</h2>
-                <p class="text-muted small mb-0">Fixtures with date and time, home vs away teams, and upcoming match views.</p>
+                <p class="text-muted small mb-0">Schedule league fixtures with kickoff dates, home and away teams, and live updates.</p>
             </div>
         </div>
     </a>
@@ -130,7 +130,7 @@ $loggedIn = isset($_SESSION['user']);
             <div class="card-body p-4">
                 <div class="landing-icon bg-warning bg-opacity-10 text-warning">🏆</div>
                 <h2 class="h5 fw-semibold">Scores &amp; history</h2>
-                <p class="text-muted small mb-0">Enter results, automatic winner logic, and match history by role.</p>
+                <p class="text-muted small mb-0">Record match results, view previous games and automatically calculate winners.</p>
             </div>
         </div>
      </a>
@@ -141,7 +141,7 @@ $loggedIn = isset($_SESSION['user']);
             <div class="card-body p-4">
                 <div class="landing-icon bg-info bg-opacity-10 text-info">📊</div>
                 <h2 class="h5 fw-semibold">Stats dashboard</h2>
-                <p class="text-muted small mb-0">AJAX-powered player stats, team ranking, and leaderboard—no full page reload.</p>
+                <p class="text-muted small mb-0">View live player statistics, Premier League standings and performance dashboards.</p>
             </div>
         </div>
      </a>
