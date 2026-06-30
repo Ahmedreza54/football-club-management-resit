@@ -8,9 +8,13 @@ final class FootballApi
     public function __construct()
     {
         $config = require dirname(__DIR__, 2) . '/config/db.php';
+
+        // Load the Football Data API key from the application configuration.
         $this->apiKey = $config['football_api_key'];
     }
-
+    /**
+     * Fetch Premier League standings from the Football Data API.
+     */
     public function getStandings(): array
     {
         $url = "https://api.football-data.org/v4/competitions/PL/standings?season=2025";
@@ -29,6 +33,9 @@ final class FootballApi
 
         return json_decode($response, true);
     }
+    /**
+     * Fetch upcoming Premier League fixtures.
+     */
 
     public function getUpcomingMatches(): array
     {
@@ -48,8 +55,11 @@ final class FootballApi
 
         return json_decode($response, true);
     }
+    /**
+     * Fetch Premier League top scorers.
+     */
 
-    public function getTopScorers(): array
+     public function getTopScorers(): array
     {
         $url = "https://api.football-data.org/v4/competitions/PL/scorers?season=2025";
 
