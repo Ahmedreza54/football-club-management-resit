@@ -50,6 +50,7 @@ $routes = [
     'home' => function () {
         View::render('home', ['title' => 'Football Management System']);
     },
+    // Dashboard with live Premier League standings and top scorers
     'dashboard' => function () {
     require_login();
 
@@ -73,14 +74,17 @@ $routes = [
         'scorers' => $scorers
     ]);
 },
+    // API endpoint for Premier League standings
     'api-standings' => function () {
         require_login();
        (new ApiController())->standings();
     },
+    // API endpoint for upcoming Premier League fixtures
     'api-matches' => function () {
     require_login();
     (new ApiController())->upcomingMatches();
     },
+    // API endpoint for Premier League top scorers
     'api-topscorers' => function () {
     require_login();
     (new ApiController())->topScorers();
