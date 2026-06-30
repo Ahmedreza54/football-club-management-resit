@@ -23,7 +23,8 @@ declare(strict_types=1);
         }
         .navbar-brand {
             font-weight: 700;
-            letter-spacing: 0.2px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
         .navbar .nav-link {
             color: rgba(255, 255, 255, 0.88) !important;
@@ -59,7 +60,9 @@ declare(strict_types=1);
 <body class="bg-light">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="./index.php?r=home">Football</a>
+        <a class="navbar-brand" href="./index.php?r=home">
+            Football Management
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
             <span class="navbar-toggler-icon"></span>
         </button>
