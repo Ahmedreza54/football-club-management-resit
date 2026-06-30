@@ -90,11 +90,18 @@ $loggedIn = isset($_SESSION['user']);
         </div>
         <div class="col-lg-5 mt-4 mt-lg-0 text-lg-end">
             <div class="d-inline-block text-start bg-white bg-opacity-10 rounded-3 p-4 border border-white border-opacity-25">
-                <div class="small text-white-50 text-uppercase fw-semibold mb-2">Quick access</div>
+            <div class="small text-white-50 text-uppercase fw-bold mb-2">
+               Quick Access Menu
+            </div>
                 <ul class="list-unstyled mb-0 small">
-                    <li class="mb-2"><a class="text-white text-decoration-none" href="./index.php?r=login">Login</a></li>
-                    <li class="mb-2"><a class="text-white text-decoration-none" href="./index.php?r=register-manager">Manager registration</a></li>
-                    <li class="mb-0"><a class="text-white text-decoration-none" href="./index.php?r=register-player">Player registration</a></li>
+                <li class="mb-2">
+                    <a class="text-white text-decoration-none fw-semibold"
+                     href="./index.php?r=login">
+                      🔐 Login
+                  </a>
+             </li>
+                    <li class="mb-2"><a class="text-white text-decoration-none" href="./index.php?r=register-manager">👨‍💼Manager registration</a></li>
+                    <li class="mb-0"><a class="text-white text-decoration-none" href="./index.php?r=register-player">⚽Player registration</a></li>
                 </ul>
             </div>
         </div>
