@@ -83,8 +83,8 @@ $loggedIn = isset($_SESSION['user']);
                     <a class="btn btn-light btn-lg px-4 fw-semibold" href="./index.php?r=login">Sign in</a>
                     <a class="btn btn-outline-light btn-lg px-4" href="./index.php?r=register-player">Create account</a>
                 <?php else: ?>
-                    <a class="btn btn-light btn-lg px-4 fw-semibold" href="./index.php?r=dashboard">Open dashboard</a>
-                    <a class="btn btn-outline-light btn-lg px-4" href="./index.php?r=teams">My teams</a>
+                    <a class="btn btn-light btn-lg px-5 fw-semibold shadow-sm" href="./index.php?r=dashboard"> Open Dashboard</a>
+                    <a class="btn btn-outline-light btn-lg px-5" href="./index.php?r=teams">Manage Teams</a>
                 <?php endif; ?>
             </div>
         </div>
