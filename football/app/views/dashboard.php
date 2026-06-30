@@ -11,29 +11,29 @@ declare(strict_types=1);
 
     <div class="row g-3">
         <div class="col-lg-4">
-            <div class="border rounded p-3 h-100 bg-white">
-                <strong>Player Stats</strong>
+            <div class="border rounded shadow-sm p-3 h-100 bg-white">
+            <h5 class="fw-bold text-primary mb-2">Player Stats</h5>
                 <div class="text-muted small mt-1">Points + wins from match results.</div>
                 <div id="player-stats" class="mt-3 text-muted">Loading...</div>
             </div>
         </div>
         <div class="col-lg-4">
-            <div class="border rounded p-3 h-100 bg-white">
-                <strong>Team Ranking</strong>
+            <div class="border rounded shadow-sm p-3 h-100 bg-white">
+            <h5 class="fw-bold text-success mb-2">Team Ranking</h5>
                 <div class="text-muted small mt-1">Ranked by wins, tie-break by points.</div>
                 <div id="team-ranking" class="mt-3 text-muted">Loading...</div>
             </div>
         </div>
         <div class="col-lg-4">
-            <div class="border rounded p-3 h-100 bg-white">
-                <strong>Leaderboard</strong>
+            <div class="border rounded shadow-sm p-3 h-100 bg-white">
+            <h5 class="fw-bold text-warning mb-2">Leaderboard</h5>
                 <div class="text-muted small mt-1">Top players by points.</div>
                 <div id="leaderboard" class="mt-3 text-muted">Loading...</div>
             </div>
         </div>
         <div class="col-lg-4">
-    <div class="border rounded p-3 h-100 bg-white">
-        <strong>Live Premier League</strong>
+    <div class="border rounded shadow-sm p-3 h-100 bg-white">
+    <h5 class="fw-bold text-info mb-2">Live Premier League</h5>
         <div class="text-muted small mt-1">Top 5 teams (Football API)</div>
 
         <table class="table table-sm mt-3 mb-0">
