@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 final class TeamsController
 {
+    /**
+     * Display all registered football teams.
+     */
     public function index(): void
     {
         $u = Auth::requireUser();
@@ -14,6 +17,9 @@ final class TeamsController
         ]);
     }
 
+    /**
+     * Create a new football team.
+     */
     public function create(): void
     {
         $u = Auth::requireUser();
@@ -83,7 +89,9 @@ final class TeamsController
             'coaches' => TeamModel::getCoaches(),
         ]);
     }
-
+    /**
+     * Edit an existing football team.
+     */
     public function edit(int $teamId): void
     {
         $u = Auth::requireUser();
@@ -158,7 +166,9 @@ final class TeamsController
             'coaches' => TeamModel::getCoaches(),
         ]);
     }
-
+    /**
+     * Display details for a single football team.
+     */
     public function view(int $teamId): void
     {
         $u = Auth::requireUser();
