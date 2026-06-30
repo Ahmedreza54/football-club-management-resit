@@ -33,7 +33,7 @@ $action = './index.php?r=register-' . $role;
             <form method="post" action="<?php echo htmlspecialchars($action); ?>">
                 <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(CSRF::token()); ?>">
                 <div class="mb-3">
-                    <label class="form-label">Name</label>
+                    <label class="form-label fw-semibold">Full Name</label>
                     <input 
                         class="form-control"
                         type="text"
@@ -42,7 +42,7 @@ $action = './index.php?r=register-' . $role;
                         required>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Email</label>
+                    <label class="form-label fw-semibold">Email Address</label>
                     <input
                         class="form-control"
                         type="email"
@@ -51,7 +51,7 @@ $action = './index.php?r=register-' . $role;
                         required>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Password</label>
+                    <label class="form-label fw-semibold">Password</label>
                     <input
                         class="form-control"
                         type="password"
