@@ -8,11 +8,11 @@ $loggedIn = isset($_SESSION['user']);
         background: linear-gradient(135deg, #0f2744 0%, #1a4d7a 45%, #0d6efd 100%);
         color: #fff;
         border-radius: 1rem;
-        padding: 3rem 2.5rem;
+        padding: 3.5rem 2.5rem;
         margin-bottom: 2rem;
         position: relative;
         overflow: hidden;
-        box-shadow: 0 1rem 2.5rem rgba(15, 39, 68, 0.35);
+        box-shadow: 0 1.25rem 3rem rgba(15, 39, 68, 0.40);
     }
     .landing-hero::after {
         content: "";
@@ -73,8 +73,12 @@ $loggedIn = isset($_SESSION['user']);
 <div class="landing-hero">
     <div class="row align-items-center position-relative" style="z-index: 1;">
         <div class="col-lg-7">
-            <span class="landing-badge">Tournament management</span>
-            <h1 class="display-5 mb-3">Football Management System</h1>
+            <span class="landing-badge">
+               Football Tournament Management
+            </span>
+            <h1 class="display-5 fw-bold mb-3">
+               Football Club Management System
+            </h1>
             <p class="lead opacity-90 mb-4 mb-lg-5">
                Manage teams, players, fixtures, match results, live scores, Premier League data, and player statistics in one modern football platform.
             </p>
@@ -169,8 +173,10 @@ $loggedIn = isset($_SESSION['user']);
 <div class="landing-cta-strip shadow-sm mb-4">
     <div class="row align-items-center gy-3">
         <div class="col-md">
-            <strong class="d-block mb-1">Ready to explore?</strong>
-            <span class="text-muted small">Presedient, manager, and player roles each see tailored menus and data.</span>
+            <strong class="d-block mb-1">
+            Ready to Explore the System?
+            </strong>
+            <span class="text-muted small">President, manager, and player roles each have secure access to tailored menus and football management features.</span>
         </div>
         <div class="col-md-auto">
             <?php if (!$loggedIn): ?>
