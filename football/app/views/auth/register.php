@@ -15,8 +15,14 @@ $action = './index.php?r=register-' . $role;
 
 <div class="row justify-content-center">
     <div class="col-md-6">
-        <div class="p-4 bg-white rounded shadow-sm">
-            <h1 class="h4 mb-3">Register - <?php echo htmlspecialchars($roleLabel); ?></h1>
+        <div class="p-4 bg-white rounded shadow border-0">
+            <h1 class="h3 fw-bold text-center text-success mb-2">
+                Create <?= htmlspecialchars($roleLabel); ?> Account
+            </h1>
+
+            <p class="text-center text-muted mb-4">
+               Complete the form below to join the Football Management System.
+            </p>
 
             <?php if (!empty($error)): ?>
                 <div class="alert alert-danger">
@@ -28,22 +34,41 @@ $action = './index.php?r=register-' . $role;
                 <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(CSRF::token()); ?>">
                 <div class="mb-3">
                     <label class="form-label">Name</label>
-                    <input class="form-control" type="text" name="name" required>
+                    <input 
+                        class="form-control"
+                        type="text"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Email</label>
-                    <input class="form-control" type="email" name="email" required>
+                    <input
+                        class="form-control"
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Password</label>
-                    <input class="form-control" type="password" name="password" required>
+                    <input
+                        class="form-control"
+                        type="password"
+                        name="password"
+                        placeholder="Create a secure password"
+                        required>
                 </div>
 
-                <button class="btn btn-success w-100" type="submit">Create Account</button>
+                <button class="btn btn-success w-100 fw-semibold py-2" type="submit">
+                    Create Account
+                </button>
             </form>
 
-            <div class="mt-3">
-                <a class="btn btn-link p-0" href="./index.php?r=login">Back to Login</a>
+            <p class="text-center text-muted small mt-3">
+                Already have an account?
+                <a href="./index.php?r=login">Sign in here</a>.
+            </p>
             </div>
         </div>
     </div>
