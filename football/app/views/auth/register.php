@@ -60,8 +60,8 @@ $action = './index.php?r=register-' . $role;
                         required>
                 </div>
 
-                <button class="btn btn-success w-100 fw-semibold py-2" type="submit">
-                    Create Account
+                <button class="btn btn-success w-100 fw-bold py-2" type="submit">
+                    Create My Account
                 </button>
             </form>
 
