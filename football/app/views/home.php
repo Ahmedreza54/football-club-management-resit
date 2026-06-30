@@ -42,15 +42,15 @@ $loggedIn = isset($_SESSION['user']);
         margin-bottom: 1rem;
     }
     .landing-feature-card {
-        border: none;
-        border-radius: 0.75rem;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        height: 100%;
-        cursor: pointer;
+    border: none;
+    border-radius: 0.75rem;
+    transition: all .25s ease;
+    height: 100%;
+    cursor: pointer;
     }
     .landing-feature-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,0.08) !important;
+    transform: translateY(-6px);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.12) !important;
     }
     .landing-icon {
         width: 3rem;
@@ -106,7 +106,7 @@ $loggedIn = isset($_SESSION['user']);
         <a href="./index.php?r=teams" class="text-decoration-none text-dark">
         <div class="card landing-feature-card shadow-sm">
             <div class="card-body p-4">
-                <div class="landing-icon bg-primary bg-opacity-10 text-primary">👥</div>
+                <div class="landing-icon bg-primary bg-opacity-25 text-primary">👥</div>
                 <h2 class="h5 fw-semibold">Teams &amp; rosters</h2>
                 <p class="text-muted small mb-0">Create football clubs, assign managers, register players and manage squads easily.</p>
             </div>
@@ -117,7 +117,7 @@ $loggedIn = isset($_SESSION['user']);
         <a href="./index.php?r=matches" class="text-decoration-none text-dark">
         <div class="card landing-feature-card shadow-sm">
             <div class="card-body p-4">
-                <div class="landing-icon bg-success bg-opacity-10 text-success">📅</div>
+                <div class="landing-icon bg-success bg-opacity-25 text-success">📅</div>
                 <h2 class="h5 fw-semibold">Match scheduling</h2>
                 <p class="text-muted small mb-0">Schedule league fixtures with kickoff dates, home and away teams, and live updates.</p>
             </div>
@@ -128,7 +128,7 @@ $loggedIn = isset($_SESSION['user']);
         <a href="./index.php?r=match-history" class="text-decoration-none text-dark">
         <div class="card landing-feature-card shadow-sm">
             <div class="card-body p-4">
-                <div class="landing-icon bg-warning bg-opacity-10 text-warning">🏆</div>
+                <div class="landing-icon bg-warning bg-opacity-25 text-warning">🏆</div>
                 <h2 class="h5 fw-semibold">Scores &amp; history</h2>
                 <p class="text-muted small mb-0">Record match results, view previous games and automatically calculate winners.</p>
             </div>
@@ -139,7 +139,7 @@ $loggedIn = isset($_SESSION['user']);
         <a href="./index.php?r=dashboard" class="text-decoration-none text-dark">
         <div class="card landing-feature-card shadow-sm">
             <div class="card-body p-4">
-                <div class="landing-icon bg-info bg-opacity-10 text-info">📊</div>
+                <div class="landing-icon bg-info bg-opacity-25 text-info">📊</div>
                 <h2 class="h5 fw-semibold">Stats dashboard</h2>
                 <p class="text-muted small mb-0">View live player statistics, Premier League standings and performance dashboards.</p>
             </div>
@@ -147,12 +147,14 @@ $loggedIn = isset($_SESSION['user']);
      </a>
     </div>
 </div>
-<div class="card shadow-sm mb-4">
+<div class="card shadow border-0 mb-4">
     <div class="card-body">
-        <h5>Upcoming Premier League Matches</h5>
+    <h5 class="fw-bold mb-3">
+      Upcoming Premier League Fixtures
+    </h5>
 
-        <div id="upcoming-matches">
-            Loading fixtures...
+        <div id="upcoming-matches" class="small text-muted">
+            Loading latest Premier League fixtures...
         </div>
     </div>
 </div>
