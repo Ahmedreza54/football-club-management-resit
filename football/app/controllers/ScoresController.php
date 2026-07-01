@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 final class ScoresController
 {
+    /**
+     * Display the history of recorded match results.
+     */
     public function history(): void
     {
         $u = Auth::requireUser();
@@ -28,7 +31,9 @@ final class ScoresController
             'role' => (string)$u['role'],
         ]);
     }
-
+    /**
+     * Update an existing match score.
+     */
     public function edit(int $matchId): void
     {
         $u = Auth::requireUser();
