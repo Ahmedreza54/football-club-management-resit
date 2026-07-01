@@ -11,61 +11,63 @@ final class ApiController
         require_login();
 
         $api = new FootballApi();
-        $data = $api->getStandings();
+        $responseData = $api->getStandings();
 
         if (isset($_GET['ajax'])) {
 
             header('Content-Type: application/json');
-           
-           // Send JSON response to the frontend
-           echo json_encode($data['standings'][0]['table']);
+
+            // Send JSON response to the frontend
+            echo json_encode($responseData['standings'][0]['table']);
 
             return;
         }
 
         View::render('api/standings', [
             'title' => 'Premier League Standings',
-            'standings' => $data['standings'][0]['table']
+            'standings' => $responseData['standings'][0]['table']
         ]);
     }
+
     /**
      * Return upcoming Premier League fixtures.
      */
-
     public function upcomingMatches(): void
     {
         require_login();
 
         $api = new FootballApi();
-        $data = $api->getUpcomingMatches();
+        $responseData = $api->getUpcomingMatches();
 
         if (isset($_GET['ajax'])) {
 
             header('Content-Type: application/json');
 
-            echo json_encode($data['matches']);
+            // Send JSON response to the frontend
+            echo json_encode($responseData['matches']);
 
             return;
         }
 
         View::render('api/matches', [
             'title' => 'Upcoming Premier League Fixtures',
-            'matches' => $data['matches']
+            'matches' => $responseData['matches']
         ]);
     }
+
     /**
      * Return the current Premier League top scorers.
      */
-
     public function topScorers(): void
     {
         require_login();
 
         $api = new FootballApi();
-        $data = $api->getTopScorers();
+        $responseData = $api->getTopScorers();
 
         header('Content-Type: application/json');
 
-        echo json_encode($data['scorers']);
+        // Send JSON response to the frontend
+        echo json_encode($responseData['scorers']);
     }
 }
