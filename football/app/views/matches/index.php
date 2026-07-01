@@ -3,9 +3,11 @@ declare(strict_types=1);
 ?>
 
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h1 class="h4 mb-0"><?php echo htmlspecialchars($title ?? 'Upcoming Matches'); ?></h1>
+    <h1 class="h3 fw-bold text-primary mb-0"><?php echo htmlspecialchars($title ?? 'Upcoming Matches'); ?></h1>
     <?php if (in_array($role ?? '', ['presedient', 'manager'], true)): ?>
-        <a class="btn btn-primary" href="./index.php?r=matches-create">Create Fixture</a>
+        <a class="btn btn-primary shadow-sm" href="./index.php?r=matches-create">
+            Create New Fixture
+        </a>
     <?php endif; ?>
 </div>
 
@@ -13,11 +15,11 @@ declare(strict_types=1);
     <div class="alert alert-info">No upcoming matches yet.</div>
 <?php else: ?>
     <div class="table-responsive">
-        <table class="table table-bordered table-hover align-middle">
+        <table class="table table-striped table-hover align-middle">
             <thead class="table-light">
                 <tr>
                     <th>ID</th>
-                    <th>Scheduled</th>
+                    <th>Match Date</th>
                     <th>Fixture</th>
                     <?php if (in_array($role ?? '', ['presedient', 'manager'], true)): ?>
                         <th style="width: 220px;">Scores</th>
@@ -38,7 +40,7 @@ declare(strict_types=1);
                         <td>
                             <a class="btn btn-outline-primary btn-sm"
                                href="./index.php?r=score-edit&id=<?php echo (int)$m['id']; ?>">
-                                Enter/Update
+                               Update Score
                             </a>
                         </td>
                     <?php endif; ?>
