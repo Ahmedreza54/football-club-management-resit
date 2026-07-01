@@ -13,7 +13,7 @@ final class FootballApi
         $this->apiKey = $config['football_api_key'];
     }
     /**
-     * Fetch Premier League standings from the Football Data API.
+     * Retrieve the latest Premier League standings from the Football Data API.
      */
     public function getStandings(): array
     {
@@ -22,6 +22,7 @@ final class FootballApi
         $ch = curl_init($url);
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 15);
 
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             "X-Auth-Token: {$this->apiKey}"
@@ -34,7 +35,7 @@ final class FootballApi
         return json_decode($response, true);
     }
     /**
-     * Fetch upcoming Premier League fixtures.
+     * Retrieve the latest upcoming Premier League fixtures from Football Data API.
      */
 
     public function getUpcomingMatches(): array
@@ -44,6 +45,7 @@ final class FootballApi
         $ch = curl_init($url);
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 15);
 
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             "X-Auth-Token: {$this->apiKey}"
@@ -56,7 +58,7 @@ final class FootballApi
         return json_decode($response, true);
     }
     /**
-     * Fetch Premier League top scorers.
+     * Retrieve the latest Premier League top scorers from Football Data API.
      */
 
      public function getTopScorers(): array
@@ -66,6 +68,7 @@ final class FootballApi
         $ch = curl_init($url);
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 15);
 
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             "X-Auth-Token: {$this->apiKey}"
