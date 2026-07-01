@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 final class MatchesController
 {
+    /**
+     * Display all scheduled football matches.
+     */
     public function index(): void
     {
         $u = Auth::requireUser();
@@ -14,7 +17,9 @@ final class MatchesController
             'role' => $u['role'],
         ]);
     }
-
+    /**
+     * Create a new football match fixture.
+     */
     public function create(): void
     {
         $u = Auth::requireUser();
