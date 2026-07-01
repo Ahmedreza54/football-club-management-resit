@@ -15,21 +15,27 @@ declare(strict_types=1);
             <div class="border rounded shadow-sm p-3 h-100 bg-white">
             <h5 class="fw-bold text-primary mb-2">Player Statistics</h5>
                 <div class="text-muted small mt-1">Player points and wins from recorded match results.</div>
-                <div id="player-stats" class="small" class="mt-3 text-muted">Loading...</div>
+                <div id="player-stats" class="small mt-3 text-muted">
+                    Loading player statistics...
+                </div>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="border rounded shadow-sm p-3 h-100 bg-white">
             <h5 class="fw-bold text-success mb-2">Team Rankings</h5>
                 <div class="text-muted small mt-1">Ranked by wins, tie-break by points.</div>
-                <div id="team-ranking" class="small" class="mt-3 text-muted">Loading...</div>
+                <div id="team-ranking" class="small mt-3 text-muted">
+                    Loading team rankings...
+                </div>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="border rounded shadow-sm p-3 h-100 bg-white">
             <h5 class="fw-bold text-warning mb-2">Leaderboard</h5>
                 <div class="text-muted small mt-1">Top players by points.</div>
-                <div id="leaderboard" class="small" class="mt-3 text-muted">Loading...</div>
+                <div id="leaderboard" class="small mt-3 text-muted">
+                    Loading leaderboard...
+                </div>
             </div>
         </div>
         <div class="col-lg-4">
